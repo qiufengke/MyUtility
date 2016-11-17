@@ -103,5 +103,15 @@ namespace Utility
 
             return model;
         }
+
+        public static List<T> MapToList<T>(IDataReader dataReader, List<string> onlyFields = null)
+        {
+            var list = new List<T>();
+            while (dataReader.Read())
+            {
+                list.Add(MapToModel<T>(dataReader, onlyFields));
+            }
+            return list;
+        }
     }
 }
