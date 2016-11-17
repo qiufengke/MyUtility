@@ -1,0 +1,8 @@
+D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\UtilityTest\bin\Debug\UtilityTest.exe.config
+D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\UtilityTest\bin\Debug\UtilityTest.exe
+D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\UtilityTest\bin\Debug\UtilityTest.pdb
+D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\UtilityTest\bin\Debug\Utility.dll
+D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\UtilityTest\bin\Debug\Utility.pdb
+D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\UtilityTest\obj\Debug\UtilityTest.csprojResolveAssemblyReference.cache
+D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\UtilityTest\obj\Debug\UtilityTest.exe
+D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\UtilityTest\obj\Debug\UtilityTest.pdb

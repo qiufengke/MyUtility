@@ -1,0 +1,4 @@
+D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\Utility\bin\Debug\Utility.dll
+D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\Utility\bin\Debug\Utility.pdb
+D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\Utility\obj\Debug\Utility.dll
+D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\Utility\obj\Debug\Utility.pdb
