@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityTest", "UtilityTest\UtilityTest.csproj", "{C6F4ED28-C8E2-4DF9-88C4-22BE3B58D235}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlandDataSet", "..\WinFormApp\XmlandDataSet\XmlandDataSet.csproj", "{26CCCFFD-2862-429D-A7CA-096111F4F5C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlandDataSet", "WinFormApp\XmlandDataSet\XmlandDataSet.csproj", "{26CCCFFD-2862-429D-A7CA-096111F4F5C5}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution

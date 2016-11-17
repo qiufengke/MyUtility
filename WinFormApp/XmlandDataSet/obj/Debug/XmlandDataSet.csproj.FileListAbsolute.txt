@@ -24,3 +24,12 @@ D:\工作区\MySrcResposity\Projects\MyUtility\WinFormApp\XmlandDataSet\obj\Debu
 D:\工作区\MySrcResposity\Projects\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.csproj.GenerateResource.Cache
 D:\工作区\MySrcResposity\Projects\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.exe
 D:\工作区\MySrcResposity\Projects\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.pdb
+C:\Users\wangs\Documents\GitHub\MyUtility\WinFormApp\XmlandDataSet\bin\Debug\XmlandDataSet.exe.config
+C:\Users\wangs\Documents\GitHub\MyUtility\WinFormApp\XmlandDataSet\bin\Debug\XmlandDataSet.exe
+C:\Users\wangs\Documents\GitHub\MyUtility\WinFormApp\XmlandDataSet\bin\Debug\XmlandDataSet.pdb
+C:\Users\wangs\Documents\GitHub\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.csprojResolveAssemblyReference.cache
+C:\Users\wangs\Documents\GitHub\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.FormMain.resources
+C:\Users\wangs\Documents\GitHub\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.Properties.Resources.resources
+C:\Users\wangs\Documents\GitHub\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.csproj.GenerateResource.Cache
+C:\Users\wangs\Documents\GitHub\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.exe
+C:\Users\wangs\Documents\GitHub\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.pdb

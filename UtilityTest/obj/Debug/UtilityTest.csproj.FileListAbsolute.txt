@@ -6,3 +6,11 @@ D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\UtilityTest\bin\Debug\
 D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\UtilityTest\obj\Debug\UtilityTest.csprojResolveAssemblyReference.cache
 D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\UtilityTest\obj\Debug\UtilityTest.exe
 D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\UtilityTest\obj\Debug\UtilityTest.pdb
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\UtilityTest.exe.config
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\obj\Debug\UtilityTest.exe
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\obj\Debug\UtilityTest.pdb
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\UtilityTest.exe
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\UtilityTest.pdb
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\Utility.dll
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\Utility.pdb
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\obj\Debug\UtilityTest.csprojResolveAssemblyReference.cache

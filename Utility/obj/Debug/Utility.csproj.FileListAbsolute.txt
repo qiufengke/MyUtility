@@ -2,3 +2,8 @@ D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\Utility\bin\Debug\Util
 D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\Utility\bin\Debug\Utility.pdb
 D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\Utility\obj\Debug\Utility.dll
 D:\工作区\MySrcResposity\Projects\MyUtility\ConsoleApp\Utility\obj\Debug\Utility.pdb
+C:\Users\wangs\Documents\GitHub\MyUtility\Utility\bin\Debug\Utility.dll
+C:\Users\wangs\Documents\GitHub\MyUtility\Utility\bin\Debug\Utility.pdb
+C:\Users\wangs\Documents\GitHub\MyUtility\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
+C:\Users\wangs\Documents\GitHub\MyUtility\Utility\obj\Debug\Utility.dll
+C:\Users\wangs\Documents\GitHub\MyUtility\Utility\obj\Debug\Utility.pdb
