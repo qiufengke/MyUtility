@@ -1,0 +1,26 @@
+c:\users\lenovo\documents\visual studio 2015\Projects\WinFormApp\XmlandDataSet\bin\Debug\XmlandDataSet.exe.config
+c:\users\lenovo\documents\visual studio 2015\Projects\WinFormApp\XmlandDataSet\bin\Debug\XmlandDataSet.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\WinFormApp\XmlandDataSet\bin\Debug\XmlandDataSet.pdb
+c:\users\lenovo\documents\visual studio 2015\Projects\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.csprojResolveAssemblyReference.cache
+c:\users\lenovo\documents\visual studio 2015\Projects\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.FormMain.resources
+c:\users\lenovo\documents\visual studio 2015\Projects\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.Properties.Resources.resources
+c:\users\lenovo\documents\visual studio 2015\Projects\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.csproj.GenerateResource.Cache
+c:\users\lenovo\documents\visual studio 2015\Projects\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.pdb
+D:\工作区\MySrcResposity\Projects\WinFormApp\XmlandDataSet\bin\Debug\XmlandDataSet.exe.config
+D:\工作区\MySrcResposity\Projects\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.exe
+D:\工作区\MySrcResposity\Projects\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.pdb
+D:\工作区\MySrcResposity\Projects\WinFormApp\XmlandDataSet\bin\Debug\XmlandDataSet.exe
+D:\工作区\MySrcResposity\Projects\WinFormApp\XmlandDataSet\bin\Debug\XmlandDataSet.pdb
+D:\工作区\MySrcResposity\Projects\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.FormMain.resources
+D:\工作区\MySrcResposity\Projects\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.Properties.Resources.resources
+D:\工作区\MySrcResposity\Projects\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.csproj.GenerateResource.Cache
+D:\工作区\MySrcResposity\Projects\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.csprojResolveAssemblyReference.cache
+D:\工作区\MySrcResposity\Projects\MyUtility\WinFormApp\XmlandDataSet\bin\Debug\XmlandDataSet.exe.config
+D:\工作区\MySrcResposity\Projects\MyUtility\WinFormApp\XmlandDataSet\bin\Debug\XmlandDataSet.exe
+D:\工作区\MySrcResposity\Projects\MyUtility\WinFormApp\XmlandDataSet\bin\Debug\XmlandDataSet.pdb
+D:\工作区\MySrcResposity\Projects\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.FormMain.resources
+D:\工作区\MySrcResposity\Projects\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.Properties.Resources.resources
+D:\工作区\MySrcResposity\Projects\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.csproj.GenerateResource.Cache
+D:\工作区\MySrcResposity\Projects\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.exe
+D:\工作区\MySrcResposity\Projects\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.pdb
