@@ -4,8 +4,15 @@ using System.Web;
 
 namespace Utility
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class WebHelper
     {
+        /// <summary>
+        /// 获取客户的ip地址
+        /// </summary>
+        /// <returns></returns>
         public static string GetClientIp()
         {
             if (HttpContext.Current == null) return "";

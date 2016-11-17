@@ -5,10 +5,19 @@ using System.Text;
 
 namespace Utility
 {
+    /// <summary>
+    /// 加解密辅助类
+    /// </summary>
     public class EncryptHelper
     {
         #region Des 加解密
 
+        /// <summary>
+        /// Des 加密
+        /// </summary>
+        /// <param name="encryptStr"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public static string DesEncrypt(string encryptStr, string key)
         {
             try
@@ -39,6 +48,12 @@ namespace Utility
             }
         }
 
+        /// <summary>
+        /// Des 解密
+        /// </summary>
+        /// <param name="decryptStr"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public static string DesDecrypt(string decryptStr, string key)
         {
             try
@@ -73,6 +88,12 @@ namespace Utility
 
         #region 3DES 加解密
 
+        /// <summary>
+        /// 3DES 加密
+        /// </summary>
+        /// <param name="encryStr">加密字符串</param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public static string Encrypt3Des(string encryStr, string key)
         {
             try
@@ -105,6 +126,12 @@ namespace Utility
             }
         }
 
+        /// <summary>
+        /// 3DES 解密
+        /// </summary>
+        /// <param name="decryStr"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public static string Decrypt3Des(string decryStr, string key)
         {
             try
