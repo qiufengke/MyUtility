@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using NPOI.HSSF.UserModel;
@@ -19,6 +14,7 @@ namespace XmlandDataSet
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// xml to  dataset
         /// </summary>
@@ -42,14 +38,13 @@ namespace XmlandDataSet
                 }
 
                 dGV.DataSource = ds.Tables[ds.Tables.Count - 1];
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
+
         /// <summary>
         /// 打开文件
         /// </summary>
@@ -88,6 +83,7 @@ namespace XmlandDataSet
                 rtbXml.Text = sr.ReadToEnd();
             }
         }
+
         /// <summary>
         /// 导出按钮
         /// </summary>
@@ -109,8 +105,8 @@ namespace XmlandDataSet
             {
                 ExportToExcel(ds, sfd);
             }
-
         }
+
         /// <summary>
         /// npoi 导出
         /// </summary>
@@ -184,6 +180,7 @@ namespace XmlandDataSet
             }
             return sw.ToString();
         }
+
         /// <summary>
         /// 格式化xml文件
         /// </summary>
@@ -193,14 +190,5 @@ namespace XmlandDataSet
         {
             rtbXml.Text = FormatXml(rtbXml.Text);
         }
-        //private string GetXmlContent(string xml)
-        //{
-        //    var xDoc = new XmlDocument();
-        //    xDoc.LoadXml(xml);
-        //    var rows = xDoc.SelectNodes("/ResultData/Row");
-        //    if (rows.Count == 0) return "";
-        //    var result = rows.Cast<XmlNode>().Aggregate("", (current, item) => current + item.OuterXml);
-        //    return result;
-        //}
     }
 }
