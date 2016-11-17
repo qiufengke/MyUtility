@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace Utility
 {
+    /// <summary>
+    /// ORM 映射类
+    /// </summary>
     public class OrmHelper
     {
         /// <summary>
@@ -104,6 +107,13 @@ namespace Utility
             return model;
         }
 
+        /// <summary>
+        /// 将 DataReader 转化为 实体对象集合
+        /// </summary>
+        /// <param name="dataReader"></param>
+        /// <param name="onlyFields"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static List<T> MapToList<T>(IDataReader dataReader, List<string> onlyFields = null)
         {
             var list = new List<T>();

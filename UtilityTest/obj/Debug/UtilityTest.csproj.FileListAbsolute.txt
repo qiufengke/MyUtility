@@ -14,3 +14,4 @@ C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\UtilityTest.pdb
 C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\Utility.dll
 C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\Utility.pdb
 C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\obj\Debug\UtilityTest.csprojResolveAssemblyReference.cache
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\Utility.xml
