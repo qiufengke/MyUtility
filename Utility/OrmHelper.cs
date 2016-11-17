@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Utility
 {
@@ -20,21 +16,20 @@ namespace Utility
         /// <returns></returns>
         public static T MapToModel<T>(IDataReader dataReader, List<string> onlyFields = null)
         {
+            var model = Activator.CreateInstance<T>();
 
-            T model = (T)Activator.CreateInstance<T>();
-
-            Type t = typeof(T);
+            var t = typeof(T);
 
             var properties = typeof(T).GetProperties();
 
-            for (int i = 0; i < dataReader.FieldCount; i++)
+            for (var i = 0; i < dataReader.FieldCount; i++)
             {
                 var columnName = dataReader.GetName(i);
 
-                PropertyInfo property =
+                var property =
                     onlyFields == null
-                    ? properties.FirstOrDefault(o => o.Name == columnName)
-                    : properties.FirstOrDefault(o => o.Name == columnName && onlyFields.Contains(columnName));
+                        ? properties.FirstOrDefault(o => o.Name == columnName)
+                        : properties.FirstOrDefault(o => o.Name == columnName && onlyFields.Contains(columnName));
 
                 if (property != null)
                 {
@@ -57,7 +52,8 @@ namespace Utility
                             case "System.String":
                                 var s = "";
                                 s = dataReader[i] == DBNull.Value ? "" : dataReader[i].ToString();
-                                property.SetValue(model, s); break;
+                                property.SetValue(model, s);
+                                break;
                             case "System.Int16":
                             case "System.Int64":
                             case "System.Int32":
@@ -67,8 +63,12 @@ namespace Utility
                                 break;
                             case "System.DateTime":
                                 DateTime d;
-                                DateTime.TryParse(dataReader[i] == DBNull.Value ? DateTime.MinValue.ToString() : dataReader[i].ToString(), out d);
-                                property.SetValue(model, d); break;
+                                DateTime.TryParse(
+                                    dataReader[i] == DBNull.Value
+                                        ? DateTime.MinValue.ToString()
+                                        : dataReader[i].ToString(), out d);
+                                property.SetValue(model, d);
+                                break;
                             case "System.Boolean":
                                 var b = false;
                                 var valType = dataReader.GetFieldType(i);
@@ -81,7 +81,8 @@ namespace Utility
                                 }
                                 else
                                 {
-                                    bool.TryParse(dataReader[i] == DBNull.Value ? "false" : dataReader[i].ToString(), out b);
+                                    bool.TryParse(dataReader[i] == DBNull.Value ? "false" : dataReader[i].ToString(),
+                                        out b);
                                 }
                                 property.SetValue(model, b);
                                 break;
@@ -91,17 +92,16 @@ namespace Utility
                                 double.TryParse(dataReader[i] == DBNull.Value ? "0" : dataReader[i].ToString(), out dV);
                                 property.SetValue(model, dV);
                                 break;
-                            case "System.Nullable`1": break;
+                            case "System.Nullable`1":
+                                break;
                         }
 
                         #endregion
                     }
-
                 }
             }
 
             return model;
         }
-
     }
 }
