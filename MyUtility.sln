@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{DDF6C45F-DA83-46CE-9742-E979AC76D195}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utility\Utils.csproj", "{DDF6C45F-DA83-46CE-9742-E979AC76D195}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityTest", "UtilityTest\UtilityTest.csproj", "{C6F4ED28-C8E2-4DF9-88C4-22BE3B58D235}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsTest", "UtilityTest\UtilsTest.csproj", "{C6F4ED28-C8E2-4DF9-88C4-22BE3B58D235}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlandDataSet", "WinFormApp\XmlandDataSet\XmlandDataSet.csproj", "{26CCCFFD-2862-429D-A7CA-096111F4F5C5}"
 EndProject

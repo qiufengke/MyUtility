@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Utility</name>
+        <name>Utils</name>
     </assembly>
     <members>
-        <member name="T:Utility.AlgorithmHelper">
+        <member name="T:Utils.AlgorithmUtil">
             <summary>
             算法辅助类
             </summary>
         </member>
-        <member name="M:Utility.AlgorithmHelper.SimpleInsertSort(System.Int32[])">
+        <member name="M:Utils.AlgorithmUtil.SimpleInsertSort(System.Int32[])">
             <summary>
             算法实现：直接插入排序
             </summary>
             <param name="a"></param>
         </member>
-        <member name="M:Utility.AlgorithmHelper.PrintRange(Utility.BsTree,System.Int32,System.Int32,System.Int32@)">
+        <member name="M:Utils.AlgorithmUtil.PrintRange(Utils.BsTree,System.Int32,System.Int32,System.Int32@)">
             <summary>
             求节点值在 [min,max] 之间的所有节点
             从小到大顺序输出
@@ -26,17 +26,61 @@
             <param name="max">最大值</param>
             <param name="count">无实际意义，用于记录循环次数</param>
         </member>
-        <member name="T:Utility.BsTree">
+        <member name="T:Utils.BsTree">
             <summary>
             二叉树
             </summary>
         </member>
-        <member name="T:Utility.OrmHelper">
+        <member name="T:Utils.EncryptUtil">
+            <summary>
+            加解密辅助类
+            </summary>
+        </member>
+        <member name="M:Utils.EncryptUtil.DesEncrypt(System.String,System.String)">
+            <summary>
+            Des 加密
+            </summary>
+            <param name="encryptStr"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.EncryptUtil.DesDecrypt(System.String,System.String)">
+            <summary>
+            Des 解密
+            </summary>
+            <param name="decryptStr"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.EncryptUtil.Encrypt3Des(System.String,System.String)">
+            <summary>
+            3DES 加密
+            </summary>
+            <param name="encryStr">加密字符串</param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.EncryptUtil.Decrypt3Des(System.String,System.String)">
+            <summary>
+            3DES 解密
+            </summary>
+            <param name="decryStr"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Extensions.TypeExtension.GetDefault(System.Type)">
+            <summary>
+            获取Type默认值
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Utils.OrmUtil">
             <summary>
             ORM 映射类
             </summary>
         </member>
-        <member name="M:Utility.OrmHelper.MapToModel``1(System.Data.IDataReader,System.Collections.Generic.List{System.String})">
+        <member name="M:Utils.OrmUtil.MapToModel``1(System.Data.IDataReader,System.Collections.Generic.List{System.String})">
             <summary>
             将 DataReader 转化为 对应实体对象 ,只对属性赋值
             </summary>
@@ -45,7 +89,7 @@
             <param name="onlyFields">需要转换的特定字段</param>
             <returns></returns>
         </member>
-        <member name="M:Utility.OrmHelper.MapToList``1(System.Data.IDataReader,System.Collections.Generic.List{System.String})">
+        <member name="M:Utils.OrmUtil.MapToList``1(System.Data.IDataReader,System.Collections.Generic.List{System.String})">
             <summary>
             将 DataReader 转化为 实体对象集合
             </summary>
@@ -54,62 +98,73 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="T:Utility.EnumHelper">
+        <member name="T:Utils.EnumUtil">
             <summary>
             枚举辅助类
             </summary>
         </member>
-        <member name="M:Utility.EnumHelper.GetDesciption(System.Enum)">
+        <member name="M:Utils.EnumUtil.GetDesciption(System.Enum)">
             <summary>
             获取枚举值的描述
             </summary>
             <param name="e"></param>
             <returns></returns>
         </member>
-        <member name="T:Utility.PinYinHelper">
+        <member name="T:Utils.PinYinUtil">
             <summary>
             拼音辅助类
             </summary>
         </member>
-        <member name="M:Utility.PinYinHelper.GetFirst(System.Char)">
+        <member name="M:Utils.PinYinUtil.GetFirst(System.Char)">
             <summary>
             取拼音第一个字段
             </summary>        
             <param name="ch"></param>        
             <returns></returns>        
         </member>
-        <member name="M:Utility.PinYinHelper.GetFirst(System.String)">
+        <member name="M:Utils.PinYinUtil.GetFirst(System.String)">
             <summary>
             取拼音第一个字段
             </summary>
             <param name="str"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.PinYinHelper.Get(System.Char)">
+        <member name="M:Utils.PinYinUtil.Get(System.Char)">
             <summary>
             获取单字拼音
             </summary>
             <param name="ch"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.PinYinHelper.ConvertToPinyin(System.String)">
+        <member name="M:Utils.PinYinUtil.ConvertToPinyin(System.String)">
             <summary>
             把汉字转换成拼音(全拼)
             </summary>
             <param name="str">汉字字符串</param>
             <returns>转换后的拼音(全拼)字符串</returns>
         </member>
-        <member name="F:Utility.PinYinHelper.otherChinese">
+        <member name="F:Utils.PinYinUtil.otherChinese">
             <summary>
             二级汉字数组
             </summary>
         </member>
-        <member name="F:Utility.PinYinHelper.otherPinYin">
+        <member name="F:Utils.PinYinUtil.otherPinYin">
             <summary>
             二级汉字对应拼音数组
             </summary>
         </member>
-        <member name="M:Utility.WebHelper.GetMd5(System.String)">
+        <member name="T:Utils.WebUtil">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Utils.WebUtil.GetClientIp">
+            <summary>
+            获取客户的ip地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.WebUtil.GetMd5(System.String)">
             <summary>
             MD5计算
             </summary>

@@ -3,12 +3,12 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Utility
+namespace Utils
 {
     /// <summary>
     /// 加解密辅助类
     /// </summary>
-    public class EncryptHelper
+    public class EncryptUtil
     {
         #region Des 加解密
 

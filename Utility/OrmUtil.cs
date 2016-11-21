@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace Utility
+namespace Utils
 {
     /// <summary>
     /// ORM 映射类
     /// </summary>
-    public class OrmHelper
+    public class OrmUtil
     {
         /// <summary>
         /// 将 DataReader 转化为 对应实体对象 ,只对属性赋值

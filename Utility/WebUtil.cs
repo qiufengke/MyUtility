@@ -2,12 +2,12 @@
 using System.Text;
 using System.Web;
 
-namespace Utility
+namespace Utils
 {
     /// <summary>
     /// 
     /// </summary>
-    public class WebHelper
+    public class WebUtil
     {
         /// <summary>
         /// 获取客户的ip地址

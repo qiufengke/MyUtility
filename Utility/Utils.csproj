@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C6F4ED28-C8E2-4DF9-88C4-22BE3B58D235}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{DDF6C45F-DA83-46CE-9742-E979AC76D195}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UtilityTest</RootNamespace>
-    <AssemblyName>UtilityTest</AssemblyName>
+    <RootNamespace>Utils</RootNamespace>
+    <AssemblyName>Utils</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -21,9 +20,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Utils.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,13 +32,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ChineseConverter">
-      <HintPath>..\Utility\lib\ChineseConverter.dll</HintPath>
+      <HintPath>lib\ChineseConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="ChineseConverterVSIP">
+      <HintPath>lib\ChineseConverterVSIP.dll</HintPath>
     </Reference>
     <Reference Include="ChnCharInfo">
-      <HintPath>..\Utility\lib\ChnCharInfo.dll</HintPath>
+      <HintPath>lib\ChnCharInfo.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,21 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test\AlgorithmTest.cs" />
-    <Compile Include="Test\CatBarkTest.cs" />
-    <Compile Include="Test\EnumTest.cs" />
-    <Compile Include="Test\OrmTest.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="AlgorithmUtil.cs" />
+    <Compile Include="EncryptUtil.cs" />
+    <Compile Include="Extensions\TypeExtension.cs" />
+    <Compile Include="OrmUtil.cs" />
+    <Compile Include="EnumUtil.cs" />
+    <Compile Include="PinYinUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Utility\Utility.csproj">
-      <Project>{ddf6c45f-da83-46ce-9742-e979ac76d195}</Project>
-      <Name>Utility</Name>
-    </ProjectReference>
+    <Compile Include="WebUtil.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

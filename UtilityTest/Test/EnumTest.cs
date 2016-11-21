@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Reflection;
-using Utility;
+using Utils;
 
 namespace UtilityTest.Test
 {
@@ -9,7 +9,7 @@ namespace UtilityTest.Test
     {
         public void Excute()
         {
-            var result = EnumHelper.GetDesciption(Category.Chinese);
+            var result = EnumUtil.GetDesciption(Category.Chinese);
             Console.WriteLine(Category.Chinese + "," + result + "," + (int)Category.Chinese);
 
             var myFieldObjectB = new MyFieldClassB();

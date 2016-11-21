@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Text;
 
-namespace Utility
+namespace Utils
 {
     /// <summary>
     /// 拼音辅助类
     /// </summary>
-    public class PinYinHelper
+    public class PinYinUtil
     {
         /// <summary>
         /// 取拼音第一个字段

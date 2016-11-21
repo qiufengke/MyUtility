@@ -1,0 +1,9 @@
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\UtilityTest.exe.config
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\UtilityTest.exe
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\UtilityTest.pdb
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\obj\Debug\UtilsTest.csprojResolveAssemblyReference.cache
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\obj\Debug\UtilityTest.exe
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\obj\Debug\UtilityTest.pdb
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\Utils.dll
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\Utils.pdb
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\Utils.xml

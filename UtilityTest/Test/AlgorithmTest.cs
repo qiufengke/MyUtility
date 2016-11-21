@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using Utility;
+using Utils;
 
 namespace UtilityTest.Test
 {
@@ -32,7 +32,7 @@ namespace UtilityTest.Test
             var t8 = new BsTree(8, t3, t10);
             var count = 0;
 
-            AlgorithmHelper.PrintRange(t8, 2, 9, ref count);
+            AlgorithmUtil.PrintRange(t8, 2, 9, ref count);
             Console.WriteLine("循环次数：" + count);
         }
 
@@ -43,7 +43,7 @@ namespace UtilityTest.Test
         {
             int[] a = { 3, 1, 5, 7, 2, 4, 9, 6 };
 
-            AlgorithmHelper.SimpleInsertSort(a);
+            AlgorithmUtil.SimpleInsertSort(a);
         }
 
         #region 求交集的补集元素

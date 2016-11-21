@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace Utility
+namespace Utils
 {
     /// <summary>
     /// 算法辅助类
     /// </summary>
-    public class AlgorithmHelper
+    public class AlgorithmUtil
     {
         /// <summary>
         /// 算法实现：直接插入排序

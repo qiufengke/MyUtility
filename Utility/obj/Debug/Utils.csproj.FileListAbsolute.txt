@@ -1,0 +1,5 @@
+C:\Users\wangs\Documents\GitHub\MyUtility\Utility\bin\Debug\Utils.xml
+C:\Users\wangs\Documents\GitHub\MyUtility\Utility\bin\Debug\Utils.dll
+C:\Users\wangs\Documents\GitHub\MyUtility\Utility\bin\Debug\Utils.pdb
+C:\Users\wangs\Documents\GitHub\MyUtility\Utility\obj\Debug\Utils.dll
+C:\Users\wangs\Documents\GitHub\MyUtility\Utility\obj\Debug\Utils.pdb

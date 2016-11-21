@@ -2,12 +2,12 @@
 using System.ComponentModel;
 using System.Linq;
 
-namespace Utility
+namespace Utils
 {
     /// <summary>
     /// 枚举辅助类
     /// </summary>
-    public class EnumHelper
+    public class EnumUtil
     {
         private static T GetCustomAttribute<T>(Enum source) where T : Attribute
         {
