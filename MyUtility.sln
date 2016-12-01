@@ -7,7 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utility\Utils.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsTest", "UtilityTest\UtilsTest.csproj", "{C6F4ED28-C8E2-4DF9-88C4-22BE3B58D235}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlandDataSet", "WinFormApp\XmlandDataSet\XmlandDataSet.csproj", "{26CCCFFD-2862-429D-A7CA-096111F4F5C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlAndDataSet", "WinFormApp\XmlandDataSet\XmlAndDataSet.csproj", "{26CCCFFD-2862-429D-A7CA-096111F4F5C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{F3E2E8F8-2E87-46DA-8AA6-5FF52EE19235}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{24CF0F91-C718-4906-9B12-0BD4424C2E11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{12CA6D15-A090-4D9A-B3E8-ED2CDCA67C2F}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
@@ -34,5 +40,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DDF6C45F-DA83-46CE-9742-E979AC76D195} = {12CA6D15-A090-4D9A-B3E8-ED2CDCA67C2F}
+		{C6F4ED28-C8E2-4DF9-88C4-22BE3B58D235} = {24CF0F91-C718-4906-9B12-0BD4424C2E11}
+		{26CCCFFD-2862-429D-A7CA-096111F4F5C5} = {F3E2E8F8-2E87-46DA-8AA6-5FF52EE19235}
 	EndGlobalSection
 EndGlobal

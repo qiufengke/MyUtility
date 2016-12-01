@@ -171,5 +171,14 @@
             <param name="str">需要计算MD5的字符串</param>
             <returns>32位的字符串</returns>
         </member>
+        <member name="M:Utils.WebUtil.SendPostRequest(System.String,System.String,System.String)">
+            <summary>
+            发送post请求
+            </summary>
+            <param name="url"></param>
+            <param name="paras"></param>
+            <param name="encodetype"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

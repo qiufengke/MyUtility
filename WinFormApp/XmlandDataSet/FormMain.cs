@@ -16,7 +16,7 @@ namespace XmlandDataSet
         }
 
         /// <summary>
-        /// xml to  dataset
+        /// XML to DataSet
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
