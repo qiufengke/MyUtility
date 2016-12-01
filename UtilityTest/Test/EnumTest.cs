@@ -5,7 +5,7 @@ using Utils;
 
 namespace UtilityTest.Test
 {
-    public class EnumTest
+    public class EnumTest : IExecute
     {
         public void Excute()
         {

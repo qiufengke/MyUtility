@@ -180,5 +180,17 @@
             <param name="encodetype"></param>
             <returns></returns>
         </member>
+        <member name="T:Utils.XmlUtil">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Utils.XmlUtil.CreateXml(System.String,System.String)">
+            <summary>
+            生成XML
+            </summary>
+            <param name="fileName">文件名(包含路径)</param>
+            <param name="fileFormat">eg : /root/red,address,/lastPushTime,,666</param>
+        </member>
     </members>
 </doc>
