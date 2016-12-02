@@ -93,7 +93,7 @@ namespace Utils
             var list = new List<XmlElement>();
             var xleList = nodeList[i].Split(',');
             var count = xleList.Count();
-            var childCount = childList == null ? 0 : childList.Count();
+            var childCount = childList?.Count() ?? 0;
 
             // 处理XML的最内层节点
             if (i > 0 && i == nodeList.Count - 1)
