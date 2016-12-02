@@ -32,3 +32,4 @@ C:\Users\wangs\Documents\GitHub\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\Xml
 C:\Users\wangs\Documents\GitHub\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.csproj.GenerateResource.Cache
 C:\Users\wangs\Documents\GitHub\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.exe
 C:\Users\wangs\Documents\GitHub\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlandDataSet.pdb
+C:\Users\wangs\Documents\GitHub\MyUtility\WinFormApp\XmlandDataSet\obj\Debug\XmlAndDataSet.csprojResolveAssemblyReference.cache
