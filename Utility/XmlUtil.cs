@@ -41,7 +41,7 @@ namespace Utils
         private static void Log(string content = "")
         {
             var errorFileUrl = $"Error\\error_{DateTime.Now.ToString("yyyyMMdd")}.log";
-            var errorMsg = content;
+            var errorMsg = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ": " + content;
             TxtUtil.WriteTxt(errorMsg, errorFileUrl);
         }
 

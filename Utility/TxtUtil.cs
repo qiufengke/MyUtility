@@ -10,14 +10,13 @@ namespace Utils
     public class TxtUtil
     {
         /// <summary>
-        /// 写入到TXT
+        /// 以追加方式写入到TXT
         /// </summary>
         /// <param name="content"></param>
         /// <param name="path"></param>
         /// <param name="encodType"></param>
         public static void WriteTxt(string content, string path, string encodType = "UTF-8")
         {
-            content = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ": " + content;
             var fileName = Path.GetFullPath(path);                       // 物理路径
             var dir = fileName.Substring(0, fileName.LastIndexOf('\\')); // 目标文件夹
             if (!File.Exists(path))
