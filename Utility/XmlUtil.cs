@@ -15,32 +15,51 @@ namespace Utils
         /// 生成XML
         /// </summary>
         /// <param name="fileName">文件名(包含路径)</param>
-        /// <param name="fileFormat">eg : /root/red,address,/lastPushTime,,666</param>
+        /// <param name="fileFormat">eg : /root/red,address,createtime/lastPushTime,city,month/now,bj,now</param>
         public static void CreateXml(string fileName, string fileFormat)
         {
-            var doc = new XmlDocument();
-            var fileUrl = "";
-            try
+            if (string.IsNullOrEmpty(fileName))
             {
-                fileUrl = fileName;
-                if (!File.Exists(fileUrl)) File.Create(fileUrl).Close();
-            }
-            catch
-            {
-                //ignore
+                Log("没有输入xml的生成路径，eg: C:\\test.xml");
+                return;
             }
 
+            if (!File.Exists(fileName))
+                File.Create(fileName).Close(); // 生成文件后关闭流，防止后面使用文件时报程序占用的异常
+
             var nodeList = fileFormat.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+            if (nodeList.Any())
+            {
+                Generate(fileName, nodeList);
+            }
+            else
+            {
+                Log("没有输入xml的格式或者格式错误");
+            }
+        }
+
+        private static void Log(string content = "")
+        {
+            var errorFileUrl = $"Error\\error_{DateTime.Now.ToString("yyyyMMdd")}.log";
+            var errorMsg = content;
+            TxtUtil.WriteTxt(errorMsg, errorFileUrl);
+        }
+
+        private static void Generate(string fileName, string[] nodeList)
+        {
             List<string> xleNames;
-            if (nodeList[0].Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries).Length > 1)
+            if (nodeList[0].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Length > 1)
             {
                 xleNames = nodeList.ToList();
+                // 添加根节点
                 xleNames.Insert(0, "root");
             }
             else
             {
                 xleNames = nodeList.ToList();
             }
+
+            var doc = new XmlDocument();
             var dec = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
             doc.AppendChild(dec);
 
@@ -58,9 +77,17 @@ namespace Utils
                 }
             }
 
-            doc.Save(fileUrl);
+            doc.Save(fileName);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="childList"></param>
+        /// <param name="doc">必须是同一个doc</param>
+        /// <param name="nodeList"></param>
+        /// <returns></returns>
         private static List<XmlElement> LinkedNode(int i, List<XmlElement> childList, XmlDocument doc,
             List<string> nodeList)
         {
@@ -69,7 +96,8 @@ namespace Utils
             var count = xleList.Count();
             var childCount = childList == null ? 0 : childList.Count();
 
-            if (i == nodeList.Count - 1)
+            // 处理XML的最内层节点
+            if (i > 0 && i == nodeList.Count - 1)
             {
                 foreach (var item in xleList)
                 {
@@ -85,38 +113,35 @@ namespace Utils
                 }
                 return list;
             }
-            if (i == 0)
+            // 处理XML的最外层节点(根节点)
+            // 前面坐了处理，此处count一定等于1
+            if (i == 0 && count == 1)
             {
-                if (count == 1)
+                var xle = doc.CreateElement(xleList[0]);
+                if (childList != null)
                 {
-                    var xle = doc.CreateElement(xleList[0]);
-                    if (childList != null)
+                    foreach (var o in childList)
                     {
-                        foreach (var o in childList)
-                        {
-                            if (o != null)
-                                xle.AppendChild(o);
-                        }
-                        list.Add(xle);
-                        return list;
+                        if (o != null) xle.AppendChild(o);
                     }
                 }
+                list.Add(xle);
+                return list;
             }
-            else
+            // 处理XML的中间层节点
+            if (count > 0)
             {
-                if (count > 0)
+                for (var j = 0; j < count; j++)
                 {
-                    for (var j = 0; j < count; j++)
+                    // 如果为空字符串，则不创建节点
+                    if (string.IsNullOrEmpty(xleList[j]))
+                        list.Add(null);
+                    else
                     {
-                        if (string.IsNullOrEmpty(xleList[j]))
-                            list.Add(null);
-                        else
-                        {
-                            var xle = doc.CreateElement(xleList[j]);
-                            if (childList != null && j < childCount && childList[j] != null)
-                                xle.AppendChild(childList[j]);
-                            list.Add(xle);
-                        }
+                        var xle = doc.CreateElement(xleList[j]);
+                        if (childList != null && j < childCount && childList[j] != null)
+                            xle.AppendChild(childList[j]);
+                        list.Add(xle);
                     }
                 }
             }

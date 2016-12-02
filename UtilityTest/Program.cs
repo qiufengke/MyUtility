@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using UtilityTest.Test;
 
 namespace UtilityTest
@@ -14,8 +15,11 @@ namespace UtilityTest
             //new AlgorithmTest().Excute03();
             //new AlgorithmTest().Excute04();
             new XmlTest().Excute();
+            //new PathTest().Excute();
             Console.WriteLine("//-----------结束---------");
             Console.Read();
         }
+
+
     }
 }

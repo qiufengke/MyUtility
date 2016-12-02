@@ -153,6 +153,27 @@
             二级汉字对应拼音数组
             </summary>
         </member>
+        <member name="T:Utils.TxtUtil">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Utils.TxtUtil.WriteTxt(System.String,System.String,System.String)">
+            <summary>
+            写入到TXT
+            </summary>
+            <param name="content"></param>
+            <param name="path"></param>
+            <param name="encodType"></param>
+        </member>
+        <member name="M:Utils.TxtUtil.ReadTxt(System.String,System.String)">
+            <summary>
+            读取TXT
+            </summary>
+            <param name="path"></param>
+            <param name="encodType"></param>
+            <returns></returns>
+        </member>
         <member name="T:Utils.WebUtil">
             <summary>
             
@@ -190,7 +211,17 @@
             生成XML
             </summary>
             <param name="fileName">文件名(包含路径)</param>
-            <param name="fileFormat">eg : /root/red,address,/lastPushTime,,666</param>
+            <param name="fileFormat">eg : /root/red,address,createtime/lastPushTime,city,month/now,bj,now</param>
+        </member>
+        <member name="M:Utils.XmlUtil.LinkedNode(System.Int32,System.Collections.Generic.List{System.Xml.XmlElement},System.Xml.XmlDocument,System.Collections.Generic.List{System.String})">
+            <summary>
+            
+            </summary>
+            <param name="i"></param>
+            <param name="childList"></param>
+            <param name="doc">必须是同一个doc</param>
+            <param name="nodeList"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

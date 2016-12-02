@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Xml;
 using Utils;
 
 namespace UtilityTest.Test
@@ -11,9 +7,18 @@ namespace UtilityTest.Test
     {
         public void Excute()
         {
-            var fileName = "D:\\test.xml";
-            var xmlFormat = "/root/red,address,666/lastPushTime,sheng,ce";
-            XmlUtil.CreateXml(fileName, xmlFormat);
+            var fileNames = new[]
+            {
+                "D:\\test1.xml",
+                "test2.xml",
+                "..\\test3.xml"
+            };
+            var list = new[]
+            {
+                "/root/red,address,createtime/lastPushTime,city,month/now,bj,now",
+                "/trees"
+            };
+            XmlUtil.CreateXml(fileNames[2], list[0]);
         }
     }
 }
