@@ -160,7 +160,7 @@
         </member>
         <member name="M:Utils.TxtUtil.WriteTxt(System.String,System.String,System.String)">
             <summary>
-            写入到TXT
+            以追加方式写入到TXT
             </summary>
             <param name="content"></param>
             <param name="path"></param>

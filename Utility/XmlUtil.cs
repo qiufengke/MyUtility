@@ -65,16 +65,15 @@ namespace Utils
 
             List<XmlElement> tmpNode = null;
             var count = xleNames.Count;
+
             for (var i = count - 1; i >= 0; i--)
             {
                 tmpNode = LinkedNode(i, tmpNode, doc, xleNames);
             }
-            if (tmpNode != null)
+
+            if (tmpNode != null && tmpNode.Any())
             {
-                foreach (var o in tmpNode)
-                {
-                    doc.AppendChild(o);
-                }
+                doc.AppendChild(tmpNode[0]);
             }
 
             doc.Save(fileName);

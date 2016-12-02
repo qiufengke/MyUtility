@@ -18,7 +18,7 @@ namespace UtilityTest.Test
                 "/root/red,address,createtime/lastPushTime,city,month/now,bj,now",
                 "/trees"
             };
-            XmlUtil.CreateXml(fileNames[2], list[0]);
+            XmlUtil.CreateXml(fileNames[1], list[0]);
         }
     }
 }
