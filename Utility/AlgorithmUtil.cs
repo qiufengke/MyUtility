@@ -76,10 +76,25 @@ namespace Utils
     /// </summary>
     public class BsTree
     {
+        /// <summary>
+        /// 左子节点
+        /// </summary>
         public BsTree LeftChrild;
+        /// <summary>
+        /// 右子节点
+        /// </summary>
         public BsTree RightChrild;
+        /// <summary>
+        /// 
+        /// </summary>
         public int Value;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="v"></param>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
         public BsTree(int v, BsTree left, BsTree right)
         {
             Value = v;

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Security.Cryptography;
@@ -8,7 +8,7 @@ using System.Web;
 namespace Utils
 {
     /// <summary>
-    /// 
+    /// web辅助类
     /// </summary>
     public class WebUtil
     {
@@ -50,9 +50,11 @@ namespace Utils
         /// </summary>
         /// <param name="url"></param>
         /// <param name="paras"></param>
+        /// <param name="headerParas">请求头参数</param>
         /// <param name="encodetype"></param>
         /// <returns></returns>
-        private string SendPostRequest(string url, string paras, string encodetype = "utf-8")
+        private string SendPostRequest(string url, string paras, Dictionary<string, string> headerParas = null
+            , string encodetype = "utf-8")
         {
             var req = (HttpWebRequest)WebRequest.Create(url);
             req.Method = "POST";
@@ -60,7 +62,13 @@ namespace Utils
 
             #region 请求头中传入参数
 
-            //req.Headers.Add("sign", sign);
+            if (headerParas != null)
+            {
+                foreach (var item in headerParas)
+                {
+                    req.Headers.Add(item.Key, item.Value);
+                }
+            }
 
             #endregion
 

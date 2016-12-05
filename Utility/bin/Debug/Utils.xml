@@ -31,6 +31,29 @@
             二叉树
             </summary>
         </member>
+        <member name="F:Utils.BsTree.LeftChrild">
+            <summary>
+            左子节点
+            </summary>
+        </member>
+        <member name="F:Utils.BsTree.RightChrild">
+            <summary>
+            右子节点
+            </summary>
+        </member>
+        <member name="F:Utils.BsTree.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Utils.BsTree.#ctor(System.Int32,Utils.BsTree,Utils.BsTree)">
+            <summary>
+            
+            </summary>
+            <param name="v"></param>
+            <param name="left"></param>
+            <param name="right"></param>
+        </member>
         <member name="T:Utils.EncryptUtil">
             <summary>
             加解密辅助类
@@ -176,7 +199,7 @@
         </member>
         <member name="T:Utils.WebUtil">
             <summary>
-            
+            web辅助类
             </summary>
         </member>
         <member name="M:Utils.WebUtil.GetClientIp">
@@ -192,18 +215,19 @@
             <param name="str">需要计算MD5的字符串</param>
             <returns>32位的字符串</returns>
         </member>
-        <member name="M:Utils.WebUtil.SendPostRequest(System.String,System.String,System.String)">
+        <member name="M:Utils.WebUtil.SendPostRequest(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
             <summary>
             发送post请求
             </summary>
             <param name="url"></param>
             <param name="paras"></param>
+            <param name="headerParas">请求头参数</param>
             <param name="encodetype"></param>
             <returns></returns>
         </member>
         <member name="T:Utils.XmlUtil">
             <summary>
-            
+            XML读写辅助类
             </summary>
         </member>
         <member name="M:Utils.XmlUtil.CreateXml(System.String,System.String)">
@@ -213,9 +237,16 @@
             <param name="fileName">文件名(包含路径)</param>
             <param name="fileFormat">eg : /root/red,address,createtime/lastPushTime,city,month/now,bj,now</param>
         </member>
+        <member name="M:Utils.XmlUtil.Generate(System.String,System.String[])">
+            <summary>
+            开始生成XML
+            </summary>
+            <param name="fileName"></param>
+            <param name="nodeList"></param>
+        </member>
         <member name="M:Utils.XmlUtil.LinkedNode(System.Int32,System.Collections.Generic.List{System.Xml.XmlElement},System.Xml.XmlDocument,System.Collections.Generic.List{System.String})">
             <summary>
-            
+            将XML节点组装到根节点上返回
             </summary>
             <param name="i"></param>
             <param name="childList"></param>

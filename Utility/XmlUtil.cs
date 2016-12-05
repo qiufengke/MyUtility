@@ -7,7 +7,7 @@ using System.Xml;
 namespace Utils
 {
     /// <summary>
-    /// 
+    /// XML读写辅助类
     /// </summary>
     public class XmlUtil
     {
@@ -19,10 +19,10 @@ namespace Utils
         public static void CreateXml(string fileName, string fileFormat)
         {
             if (string.IsNullOrEmpty(fileName))
-            {
-                Log("没有输入xml的生成路径，eg: C:\\test.xml");
-                return;
-            }
+                throw new ArgumentException("没有设置XML的生成路径，eg: C:\\test.xml.");
+
+            if (string.IsNullOrEmpty(fileFormat))
+                throw new ArgumentException("没有设置XML的生成格式，eg: /root/date/tuesday.");
 
             if (!File.Exists(fileName))
                 File.Create(fileName).Close(); // 生成文件后关闭流，防止后面使用文件时报程序占用的异常
@@ -34,17 +34,22 @@ namespace Utils
             }
             else
             {
-                Log("没有输入xml的格式或者格式错误");
+                throw new ArgumentException("XML的生成格式设置错误，eg: /root/date/tuesday.");
             }
         }
 
         private static void Log(string content = "")
         {
-            var errorFileUrl = $"Error\\error_{DateTime.Now.ToString("yyyyMMdd")}.log";
+            var errorFileUrl = $"XMLError\\error_{DateTime.Now.ToString("yyyyMMdd")}.log";
             var errorMsg = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ": " + content;
             TxtUtil.WriteTxt(errorMsg, errorFileUrl);
         }
 
+        /// <summary>
+        /// 开始生成XML
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="nodeList"></param>
         private static void Generate(string fileName, string[] nodeList)
         {
             List<string> xleNames;
@@ -80,7 +85,7 @@ namespace Utils
         }
 
         /// <summary>
-        /// 
+        /// 将XML节点组装到根节点上返回
         /// </summary>
         /// <param name="i"></param>
         /// <param name="childList"></param>

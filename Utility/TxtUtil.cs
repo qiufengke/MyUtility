@@ -17,6 +17,12 @@ namespace Utils
         /// <param name="encodType"></param>
         public static void WriteTxt(string content, string path, string encodType = "UTF-8")
         {
+            if (string.IsNullOrEmpty(content))
+                throw new ArgumentException("the writing content is null or empty.");
+
+            if (string.IsNullOrEmpty(path))
+                throw new ArgumentException("the path is null or empty.");
+
             var fileName = Path.GetFullPath(path);                       // 物理路径
             var dir = fileName.Substring(0, fileName.LastIndexOf('\\')); // 目标文件夹
             if (!File.Exists(path))
@@ -41,6 +47,9 @@ namespace Utils
         /// <returns></returns>
         public static string ReadTxt(string path, string encodType = "UTF-8")
         {
+            if (string.IsNullOrEmpty(path))
+                throw new ArgumentException("the path is null or empty.");
+
             var encod = string.IsNullOrEmpty(encodType)
                     ? Encoding.UTF8
                     : Encoding.GetEncoding(encodType);
