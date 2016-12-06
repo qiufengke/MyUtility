@@ -59,5 +59,14 @@ namespace XmlAndDataSet.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   查找类似 文件已生成到  的本地化字符串。
+        /// </summary>
+        internal static string dataMsg {
+            get {
+                return ResourceManager.GetString("dataMsg", resourceCulture);
+            }
+        }
     }
 }

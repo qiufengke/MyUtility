@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml;
 
 namespace Utils
@@ -12,10 +14,32 @@ namespace Utils
     public class XmlUtil
     {
         /// <summary>
+        /// 返回指定格式的XML内容
+        /// </summary>
+        /// <param name="fileFormat"></param>
+        /// <returns></returns>
+        public static string CreateXml(string fileFormat)
+        {
+            if (string.IsNullOrEmpty(fileFormat))
+                throw new ArgumentException("没有设置XML的生成格式，eg: /root/date/tuesday.");
+
+            var nodeList = fileFormat.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+            if (nodeList.Any())
+            {
+                var xmlDoc = Generate("", nodeList);
+                var stream = new MemoryStream();
+                xmlDoc.Save(stream);
+                var result = Encoding.UTF8.GetString(stream.ToArray());
+                return result;
+            }
+            throw new ArgumentException("XML的生成格式设置错误，eg: /root/date/tuesday.");
+        }
+
+        /// <summary>
         /// 生成XML
         /// </summary>
         /// <param name="fileName">文件名(包含路径)</param>
-        /// <param name="fileFormat">eg : /root/red,address,createtime/lastPushTime,city,month/now,bj,now</param>
+        /// <param name="fileFormat">eg : /root/red,address[ip=127.0.0.1;id=6],createtime/lastPushTime,city,month/now,bj,six</param>
         public static void CreateXml(string fileName, string fileFormat)
         {
             if (string.IsNullOrEmpty(fileName))
@@ -30,7 +54,8 @@ namespace Utils
             var nodeList = fileFormat.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
             if (nodeList.Any())
             {
-                Generate(fileName, nodeList);
+                var xmlDoc = Generate(fileName, nodeList);
+                xmlDoc.Save(fileName);
             }
             else
             {
@@ -38,11 +63,21 @@ namespace Utils
             }
         }
 
-        private static void Log(string content = "")
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static string ReadXml(string fileName, string node)
         {
-            var errorFileUrl = $"XMLError\\error_{DateTime.Now.ToString("yyyyMMdd")}.log";
-            var errorMsg = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ": " + content;
-            TxtUtil.WriteTxt(errorMsg, errorFileUrl);
+            if (string.IsNullOrEmpty(fileName))
+                throw new ArgumentNullException(fileName);
+            var xml = new XmlDocument();
+            xml.Load(fileName);
+            var xle = xml.SelectSingleNode(node);
+            return xle?.InnerText ?? "";
         }
 
         /// <summary>
@@ -50,7 +85,7 @@ namespace Utils
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="nodeList"></param>
-        private static void Generate(string fileName, string[] nodeList)
+        private static XmlDocument Generate(string fileName, string[] nodeList)
         {
             List<string> xleNames;
             if (nodeList[0].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Length > 1)
@@ -81,7 +116,7 @@ namespace Utils
                 doc.AppendChild(tmpNode[0]);
             }
 
-            doc.Save(fileName);
+            return doc;
         }
 
         /// <summary>
@@ -111,7 +146,7 @@ namespace Utils
                     }
                     else
                     {
-                        var xle = doc.CreateElement(item);
+                        var xle = CreateXmlEle(doc, item);
                         list.Add(xle);
                     }
                 }
@@ -121,7 +156,7 @@ namespace Utils
             // 前面坐了处理，此处count一定等于1
             if (i == 0 && count == 1)
             {
-                var xle = doc.CreateElement(xleList[0]);
+                var xle = CreateXmlEle(doc, xleList[0]);
                 if (childList != null)
                 {
                     foreach (var o in childList)
@@ -142,7 +177,7 @@ namespace Utils
                         list.Add(null);
                     else
                     {
-                        var xle = doc.CreateElement(xleList[j]);
+                        var xle = CreateXmlEle(doc, xleList[j]);
                         if (childList != null && j < childCount && childList[j] != null)
                             xle.AppendChild(childList[j]);
                         list.Add(xle);
@@ -151,6 +186,31 @@ namespace Utils
             }
 
             return list;
+        }
+
+        private static XmlElement CreateXmlEle(XmlDocument doc, string node)
+        {
+            var regx = new Regex(@"^[^\[|\]]*(\[(\w*=.*;?)*\])?$");
+            var matchs = regx.Matches(node);
+            if (matchs.Count == 0)
+                throw new Exception("XML格式错误，请检查节点定义！");
+            var mV = matchs[0].Value; // 匹配到的值
+            var index = mV.LastIndexOf("[", StringComparison.Ordinal);
+            var nodeName = index == -1 ? node : mV.Substring(0, index);
+            var xle = doc.CreateElement(nodeName);
+
+            if (mV.Contains("[")) // 含有属性值
+            {
+                var properties = mV.Substring(index + 1, mV.Length - index - 2)
+                    .Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (var o in properties)
+                {
+                    var props = o.Split('=');
+                    xle.SetAttribute(props[0], props[1]);
+                }
+            }
+            return xle;
         }
     }
 }

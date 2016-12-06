@@ -3,13 +3,26 @@ using System.Data;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using System.Xml;
-using NPOI.HSSF.UserModel;
+using XmlAndDataSet;
 
 namespace XmlandDataSet
 {
     public partial class FormMain : Form
     {
+        private static FormCreateXml _instance;
+
+        public static FormCreateXml Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new FormCreateXml();
+                else if (_instance.IsDisposed)
+                    _instance = new FormCreateXml();
+                return _instance;
+            }
+        }
+
         public FormMain()
         {
             InitializeComponent();
@@ -70,7 +83,7 @@ namespace XmlandDataSet
             {
                 var ds = new DataSet();
                 //从路径读取文件
-                ds.ReadXml(txtFile.Text);
+                ds.ReadXml(oFD.FileName);
                 dGV.DataSource = ds.Tables[ds.Tables.Count - 1];
             }
             catch (Exception ex)
@@ -79,7 +92,7 @@ namespace XmlandDataSet
             }
             finally
             {
-                var sr = new StreamReader(txtFile.Text, oFD.FileName.EndsWith(".txt") ? Encoding.Default : Encoding.UTF8);
+                var sr = new StreamReader(oFD.FileName, oFD.FileName.EndsWith(".txt") ? Encoding.Default : Encoding.UTF8);
                 rtbXml.Text = sr.ReadToEnd();
             }
         }
@@ -103,82 +116,8 @@ namespace XmlandDataSet
             };
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                ExportToExcel(ds, sfd);
+                FormUtil.ExportToExcel(ds, sfd);
             }
-        }
-
-        /// <summary>
-        /// npoi 导出
-        /// </summary>
-        /// <param name="ds"></param>
-        /// <param name="sfd"></param>
-        private static void ExportToExcel(DataTable ds, SaveFileDialog sfd)
-        {
-            var rowCount = ds.Rows.Count;
-            var columnCount = ds.Columns.Count;
-            var fileName = sfd.FileName;
-
-            if (columnCount > 0 && rowCount > 0)
-            {
-                var wb = new HSSFWorkbook();
-                var sheet = wb.CreateSheet("表1");
-                var header = sheet.CreateRow(0);
-                for (var i = 0; i < columnCount; i++)
-                {
-                    header.CreateCell(i).SetCellValue(ds.Columns[i].ColumnName);
-                }
-                for (var i = 0; i < rowCount; i++)
-                {
-                    var tr = sheet.CreateRow(i + 1);
-                    for (var j = 0; j < columnCount; j++)
-                    {
-                        var cellValue = 0;
-                        if (int.TryParse(ds.Rows[i][j].ToString(), out cellValue))
-                        {
-                            tr.CreateCell(j).SetCellValue(cellValue);
-                        }
-                        else
-                        {
-                            tr.CreateCell(j).SetCellValue(ds.Rows[i][j].ToString());
-                        }
-                    }
-                }
-
-                //var path = System.AppDomain.CurrentDomain.BaseDirectory;
-                //var fileName = path + ds.TableName + ".xls";
-                using (var file = new FileStream(fileName, FileMode.OpenOrCreate))
-                {
-                    wb.Write(file);
-                    file.Close();
-                }
-            }
-        }
-
-        private static string FormatXml(string xml)
-        {
-            var xd = new XmlDocument();
-            xd.LoadXml(xml);
-            var sw = new StringWriter();
-            XmlTextWriter xtw = null;
-            try
-            {
-                xtw = new XmlTextWriter(sw)
-                {
-                    Formatting = Formatting.Indented,
-                    Indentation = 2
-                };
-                xd.WriteTo(xtw);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return xml;
-            }
-            finally
-            {
-                if (xtw != null) xtw.Close();
-            }
-            return sw.ToString();
         }
 
         /// <summary>
@@ -188,7 +127,18 @@ namespace XmlandDataSet
         /// <param name="e"></param>
         private void btnFormat_Click(object sender, EventArgs e)
         {
-            rtbXml.Text = FormatXml(rtbXml.Text);
+            rtbXml.Text = FormUtil.FormatXml(rtbXml.Text);
+        }
+
+        /// <summary>
+        /// 弹出XML生成框
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TsmiCreateXml_Click(object sender, EventArgs e)
+        {
+            Instance.Show();
+            Instance.Focus();
         }
     }
 }

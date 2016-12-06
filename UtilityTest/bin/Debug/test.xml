@@ -5,7 +5,7 @@
       <now />
     </lastPushTime>
   </red>
-  <address>
+  <address id="3" ip="'127.0.0.1'">
     <city>
       <bj />
     </city>

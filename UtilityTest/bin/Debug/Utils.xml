@@ -230,12 +230,28 @@
             XML读写辅助类
             </summary>
         </member>
+        <member name="M:Utils.XmlUtil.CreateXml(System.String)">
+            <summary>
+            返回指定格式的XML内容
+            </summary>
+            <param name="fileFormat"></param>
+            <returns></returns>
+        </member>
         <member name="M:Utils.XmlUtil.CreateXml(System.String,System.String)">
             <summary>
             生成XML
             </summary>
             <param name="fileName">文件名(包含路径)</param>
-            <param name="fileFormat">eg : /root/red,address,createtime/lastPushTime,city,month/now,bj,now</param>
+            <param name="fileFormat">eg : /root/red,address[ip=127.0.0.1;id=6],createtime/lastPushTime,city,month/now,bj,six</param>
+        </member>
+        <member name="M:Utils.XmlUtil.ReadXml(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="fileName"></param>
+            <param name="node"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
         </member>
         <member name="M:Utils.XmlUtil.Generate(System.String,System.String[])">
             <summary>

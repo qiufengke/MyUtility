@@ -15,9 +15,11 @@ namespace UtilityTest
             //new AlgorithmTest().Excute02();
             //new AlgorithmTest().Excute03();
             //new AlgorithmTest().Excute04();
-            //new XmlTest().Excute();
+
+
+            new XmlTest().Excute();
             //new PathTest().Excute();
-            TxtUtil.ReadTxt("");
+            //TxtUtil.ReadTxt("");
             Console.WriteLine("//-----------结束---------");
             Console.Read();
         }
