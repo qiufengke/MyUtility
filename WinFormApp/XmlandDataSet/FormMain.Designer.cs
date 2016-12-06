@@ -192,7 +192,7 @@
             this.MinimizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "XmlToDataSet 工具";
+            this.Text = "Xml 转 DataSet工具";
             ((System.ComponentModel.ISupportInitialize)(this.dGV)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -130,7 +130,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCreateXml";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormCreateXML";
+            this.Text = "XML生成";
             this.ResumeLayout(false);
             this.PerformLayout();
 
