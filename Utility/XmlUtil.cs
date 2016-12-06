@@ -36,7 +36,7 @@ namespace Utils
         }
 
         /// <summary>
-        /// 生成XML
+        /// 生成XML，并保存到文件
         /// </summary>
         /// <param name="fileName">文件名(包含路径)</param>
         /// <param name="fileFormat">eg : /root/red,address[ip=127.0.0.1;id=6],createtime/lastPushTime,city,month/now,bj,six</param>
