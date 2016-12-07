@@ -99,10 +99,10 @@
             this.label2.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(37, 376);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(392, 98);
+            this.label2.Size = new System.Drawing.Size(441, 98);
             this.label2.TabIndex = 4;
-            this.label2.Text = "XML的格式：\r\n\r\n1、同级别节点逗号隔开\r\n\r\n2、节点支持属性自定义，节点名[属性名=属性值]\r\n\r\n3、示例 /root/red,address[ip=1" +
-    "27.0.0.1;id=6],createtime";
+            this.label2.Text = "XML的格式：\r\n\r\n1、同级别节点逗号隔开\r\n\r\n2、节点支持属性自定义，节点名[属性名=属性值]，多个属性分号隔开\r\n\r\n3、示例 /root/red,add" +
+    "ress[ip=127.0.0.1;id=6],createtime";
             // 
             // btnPreview
             // 

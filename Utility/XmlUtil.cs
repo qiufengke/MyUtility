@@ -26,11 +26,13 @@ namespace Utils
             var nodeList = fileFormat.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
             if (nodeList.Any())
             {
-                var xmlDoc = Generate("", nodeList);
-                var stream = new MemoryStream();
-                xmlDoc.Save(stream);
-                var result = Encoding.UTF8.GetString(stream.ToArray());
-                return result;
+                var xmlDoc = Generate(nodeList);
+                using (var stream = new MemoryStream())
+                {
+                    xmlDoc.Save(stream);
+                    var result = Encoding.UTF8.GetString(stream.ToArray());
+                    return result;
+                }
             }
             throw new ArgumentException("XML的生成格式设置错误，eg: /root/date/tuesday.");
         }
@@ -39,7 +41,9 @@ namespace Utils
         /// 生成XML，并保存到文件
         /// </summary>
         /// <param name="fileName">文件名(包含路径)</param>
-        /// <param name="fileFormat">eg : /root/red,address[ip=127.0.0.1;id=6],createtime/lastPushTime,city,month/now,bj,six</param>
+        /// <param name="fileFormat">
+        /// eg : /root/red,address[ip=127.0.0.1;id=6],createtime/lastPushTime,city,month/now,bj,six
+        /// </param>
         public static void CreateXml(string fileName, string fileFormat)
         {
             if (string.IsNullOrEmpty(fileName))
@@ -54,7 +58,7 @@ namespace Utils
             var nodeList = fileFormat.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
             if (nodeList.Any())
             {
-                var xmlDoc = Generate(fileName, nodeList);
+                var xmlDoc = Generate(nodeList);
                 xmlDoc.Save(fileName);
             }
             else
@@ -83,9 +87,8 @@ namespace Utils
         /// <summary>
         /// 开始生成XML
         /// </summary>
-        /// <param name="fileName"></param>
         /// <param name="nodeList"></param>
-        private static XmlDocument Generate(string fileName, string[] nodeList)
+        private static XmlDocument Generate(string[] nodeList)
         {
             List<string> xleNames;
             if (nodeList[0].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Length > 1)

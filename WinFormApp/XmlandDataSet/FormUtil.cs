@@ -17,7 +17,6 @@ namespace XmlAndDataSet
         {
             if (string.IsNullOrEmpty(xml))
             {
-                MessageBox.Show("请输入文件路径");
                 return "";
             }
             var xd = new XmlDocument();
