@@ -68,7 +68,7 @@ namespace Utils
         }
 
         /// <summary>
-        /// 
+        /// 读取XML节点值
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="node"></param>
@@ -191,6 +191,12 @@ namespace Utils
             return list;
         }
 
+        /// <summary>
+        /// 创建XML节点元素
+        /// </summary>
+        /// <param name="doc"></param>
+        /// <param name="node"></param>
+        /// <returns></returns>
         private static XmlElement CreateXmlEle(XmlDocument doc, string node)
         {
             var regx = new Regex(@"^[^\[|\]]*(\[(\w*=.*;?)*\])?$");
