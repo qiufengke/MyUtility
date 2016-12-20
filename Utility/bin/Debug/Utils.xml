@@ -91,6 +91,36 @@
             <param name="key"></param>
             <returns></returns>
         </member>
+        <member name="T:Utils.Extensions.ListEntension">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Utils.Extensions.ListEntension.MapToList``2(System.Collections.Generic.List{``0},System.Collections.Generic.List{System.String})">
+            <summary>
+            将 List&lt;T1&gt; 转化为 List&lt;T2&gt;
+            </summary>
+            <param name="list"></param>
+            <param name="mapColumns"></param>
+            <typeparam name="T1"></typeparam>
+            <typeparam name="T2">target obj</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Extensions.ListEntension.MapToModel``2(``0,System.Collections.Generic.List{System.String})">
+            <summary>
+            将 T1 映射到 T2 实体
+            </summary>
+            <param name="entity"></param>
+            <param name="mapColumns"></param>
+            <typeparam name="T2">target obj</typeparam>
+            <typeparam name="T1"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Utils.Extensions.TypeExtension">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:Utils.Extensions.TypeExtension.GetDefault(System.Type)">
             <summary>
             获取Type默认值
@@ -133,7 +163,7 @@
         </member>
         <member name="M:Utils.OrmUtil.MapToList``2(System.Collections.Generic.List{``0},System.Collections.Generic.List{System.String})">
             <summary>
-            讲 List&lt;T1&gt; 转化为 List&lt;T2&gt;
+            将 List&lt;T1&gt; 转化为 List&lt;T2&gt;
             </summary>
             <param name="list"></param>
             <param name="mapColumns">映射的字段或属性</param>

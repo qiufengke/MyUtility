@@ -19,6 +19,7 @@ namespace Utils
         /// <param name="mapColumns">需要转换的特定属性</param>
         /// <returns></returns>
         public static T MapToModel<T>(IDataReader dataReader, List<string> mapColumns = null)
+            where T : class, new()
         {
             var model = Activator.CreateInstance<T>();
 
@@ -114,6 +115,7 @@ namespace Utils
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         public static List<T> MapToList<T>(IDataReader dataReader, List<string> mapColumns = null)
+            where T : class, new()
         {
             var list = new List<T>();
             while (dataReader.Read())
@@ -132,6 +134,8 @@ namespace Utils
         /// <typeparam name="T2"></typeparam>
         /// <returns></returns>
         public static T2 MapToModel<T1, T2>(T1 entity, List<string> mapColumns = null)
+            where T2 : class, new()
+            where T1 : class, new()
         {
             var properties = typeof(T1).GetProperties();
             var fields = typeof(T1).GetFields();
@@ -142,7 +146,6 @@ namespace Utils
                 dic.Add(f.Name, f);
             }
 
-
             var skipMapDefined = mapColumns == null || !mapColumns.Any();
 
             var model = Activator.CreateInstance<T2>();
@@ -151,7 +154,7 @@ namespace Utils
             {
                 if (skipMapDefined || mapColumns.Contains(item.Name))
                 {
-                    var v = GetValue(entity, dic, item.Name, item.FieldType);
+                    var v = GetValue(entity, dic, item.Name);
                     if (v == null) continue;
                     item.SetValue(model, v);
                 }
@@ -162,7 +165,7 @@ namespace Utils
             {
                 if (skipMapDefined || mapColumns.Contains(item.Name))
                 {
-                    var v = GetValue(entity, dic, item.Name, item.PropertyType);
+                    var v = GetValue(entity, dic, item.Name);
                     if (v == null) continue;
                     item.SetValue(model, v);
                 }
@@ -171,7 +174,22 @@ namespace Utils
             return model;
         }
 
-        private static object GetValue<T1>(T1 entity, Dictionary<string, object> dic, string name, Type type)
+        /// <summary>
+        /// 将 List&lt;T1&gt; 转化为 List&lt;T2&gt;
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="mapColumns">映射的字段或属性</param>
+        /// <typeparam name="T1"></typeparam>
+        /// <typeparam name="T2"></typeparam>
+        /// <returns></returns>
+        public static List<T2> MapToList<T1, T2>(List<T1> list, List<string> mapColumns = null)
+            where T2 : class, new()
+            where T1 : class, new()
+        {
+            return list.Select(o => MapToModel<T1, T2>(o, mapColumns)).ToList();
+        }
+
+        private static object GetValue<T1>(T1 entity, Dictionary<string, object> dic, string name)
         {
             var d = dic.FirstOrDefault(x => x.Key == name);
             // dic 没有 key
@@ -180,19 +198,6 @@ namespace Utils
             var fieldInfo = info as FieldInfo;
             var v = fieldInfo != null ? fieldInfo.GetValue(entity) : ((PropertyInfo)info).GetValue(entity);
             return v;
-        }
-
-        /// <summary>
-        /// 讲 List&lt;T1&gt; 转化为 List&lt;T2&gt;
-        /// </summary>
-        /// <param name="list"></param>
-        /// <param name="mapColumns">映射的字段或属性</param>
-        /// <typeparam name="T1"></typeparam>
-        /// <typeparam name="T2"></typeparam>
-        /// <returns></returns>
-        public static List<T2> MapToList<T1, T2>(List<T1> list, List<string> mapColumns = null)
-        {
-            return list.Select(o => MapToModel<T1, T2>(o, mapColumns)).ToList();
         }
     }
 }

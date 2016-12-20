@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="AlgorithmUtil.cs" />
     <Compile Include="EncryptUtil.cs" />
+    <Compile Include="Extensions\IListEntension.cs" />
     <Compile Include="Extensions\TypeExtension.cs" />
     <Compile Include="OrmUtil.cs" />
     <Compile Include="EnumUtil.cs" />

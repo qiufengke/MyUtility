@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Utils;
+using Utils.Extensions;
 
 namespace UtilityTest.Test
 {
@@ -16,7 +17,9 @@ namespace UtilityTest.Test
                 new Student1 {City = "bj", Sex = "n"}
             };
             var list2 = OrmUtil.MapToList<Student1, Student2>(list1);
-            var jsonResult = JsonConvert.SerializeObject(list2, Formatting.Indented);
+            var list3 = list1.MapToList<Student1, Student2>();
+            var jsonResult = JsonConvert.SerializeObject(list3, Formatting.Indented);
+
             Console.WriteLine(jsonResult);
         }
     }

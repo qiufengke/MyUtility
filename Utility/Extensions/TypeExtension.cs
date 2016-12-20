@@ -2,6 +2,9 @@
 
 namespace Utils.Extensions
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class TypeExtension
     {
         /// <summary>
