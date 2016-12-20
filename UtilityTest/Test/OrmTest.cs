@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Utils;
 
 namespace UtilityTest.Test
 {
@@ -6,7 +9,34 @@ namespace UtilityTest.Test
     {
         public void Excute()
         {
-            throw new NotImplementedException();
+            var list1 = new List<Student1>
+            {
+                new Student1 {City = "bj", Sex = "n"},
+                new Student1 {City = "bj", Sex = "n"},
+                new Student1 {City = "bj", Sex = "n"}
+            };
+            var list2 = OrmUtil.MapToList<Student1, Student2>(list1);
+            var jsonResult = JsonConvert.SerializeObject(list2, Formatting.Indented);
+            Console.WriteLine(jsonResult);
         }
+    }
+
+    public class Student1
+    {
+        public int Age = 20;
+        public string City;
+        public string Sex;
+        public int testInt = 500;
+        public DateTime Birthday { get; set; }
+    }
+
+    public class Student2
+    {
+        public int Age = 20;
+        public string City;
+        public string Sex;
+        public string testP { get; set; }
+        public bool testB { get; set; }
+        public int testInt { get; set; }
     }
 }

@@ -7,3 +7,5 @@ C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\obj\Debug\UtilityTest.pdb
 C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\Utils.dll
 C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\Utils.pdb
 C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\Utils.xml
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\Newtonsoft.Json.dll
+C:\Users\wangs\Documents\GitHub\MyUtility\UtilityTest\bin\Debug\Newtonsoft.Json.xml
